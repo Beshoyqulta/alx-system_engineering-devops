@@ -1,2 +1,2 @@
 #!/bin/bash
-cur=$(pwd) ; echo "Current working directory: $cur"
+echo $(realpath .)
