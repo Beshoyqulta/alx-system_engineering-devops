@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "obase=bestchol; $(echo $WATER | base64 -d + $(echo $STIR | base64 -d))" | bc
+echo $(echo "obase=10; $(echo $WATER | base64 -d) + $(echo $STIR | base64 -d)" | bc) | awk '{ num=$1; base=36; while(num>0) { digit=num%base; if(digit<10) printf digit; else printf "%c", digit+55; num=int(num/base);} printf "\n"}'
